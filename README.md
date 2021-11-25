@@ -1,2 +1,2 @@
-# aoc_2021_php
-PHP solutions for https://adventofcode.com/2021/
+# Advent of Code 2021
+PHP solutions for Advent of Code 2021 (https://adventofcode.com/2021/)
