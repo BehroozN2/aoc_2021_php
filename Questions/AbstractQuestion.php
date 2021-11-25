@@ -4,14 +4,8 @@ namespace Questions;
 
 abstract class AbstractQuestion
 {
-    protected array $inputArray = [];
-
-    public function __construct(private int $part, protected string $input)
+    public function __construct(private int $part, protected array $input)
     {
-        $this->inputArray = preg_split(
-            "/\r\n|\n|\r/",
-            trim($this->input)
-        );
     }
 
     public function __call(string $name, array $arguments): void

@@ -6,11 +6,11 @@ class Day1 extends AbstractQuestion
 {
     protected function part1(): string
     {
-        return implode(', ', $this->inputArray);
+        return implode(', ', $this->input);
     }
 
     protected function part2(): string
     {
-        return implode(', ', $this->inputArray);
+        return implode(', ', $this->input);
     }
 }

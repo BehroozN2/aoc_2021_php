@@ -22,7 +22,7 @@ function getFullPath(string $relativePath): string
 $inputPath = getFullPath('Inputs/Day' . $day . '.txt');
 
 if (file_exists($inputPath)) {
-    $input = file_get_contents($inputPath);
+    $input = file($inputPath, FILE_IGNORE_NEW_LINES);
 } else {
     die('Missing input file for this day.');
 }
