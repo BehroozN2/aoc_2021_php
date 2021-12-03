@@ -24,18 +24,18 @@ class Day3 extends AbstractQuestion
         $bitsCount = count($oxygenDiagnosticReport[0]);
 
         for ($bitColumn = 0; $bitColumn < $bitsCount; $bitColumn++) {
-            $oxygenMostCommonBit = $this->getMostCommonBit($oxygenDiagnosticReport, $bitColumn);
-
             if (count($oxygenDiagnosticReport) > 1) {
+                $oxygenMostCommonBit = $this->getMostCommonBit($oxygenDiagnosticReport, $bitColumn);
+
                 $oxygenDiagnosticReport = array_filter(
                     $oxygenDiagnosticReport,
                     fn($bits) => $bits[$bitColumn] === $oxygenMostCommonBit,
                 );
             }
 
-            $co2MostCommonBit = $this->getMostCommonBit($co2DiagnosticReport, $bitColumn);
-
             if (count($co2DiagnosticReport) > 1) {
+                $co2MostCommonBit = $this->getMostCommonBit($co2DiagnosticReport, $bitColumn);
+
                 $co2DiagnosticReport = array_filter(
                     $co2DiagnosticReport,
                     fn($bits) => $bits[$bitColumn] !== $co2MostCommonBit,
