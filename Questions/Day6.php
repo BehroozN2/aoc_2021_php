@@ -23,13 +23,7 @@ class Day6 extends AbstractQuestion
         }
 
         for ($day = 0; $day < $days; $day++) {
-            $lanternFishesCopy = $lanternFishes;
-
-            for ($timer = 0; $timer < 8; $timer++) {
-                $lanternFishes[$timer] = $lanternFishesCopy[$timer + 1];
-            }
-
-            $lanternFishes[6] += $lanternFishes[8] = $lanternFishesCopy[0];
+            $lanternFishes[6] += $lanternFishes[] = array_shift($lanternFishes);
         }
 
         return array_sum($lanternFishes);
