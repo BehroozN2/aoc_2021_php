@@ -30,6 +30,14 @@ abstract class AbstractQuestion
         );
     }
 
+    protected function getSingleLineInputAsArrayOfIntegers(): array
+    {
+        return array_map(
+            fn($integer) => (int)$integer,
+            explode(',', $this->input[0]),
+        );
+    }
+
     abstract protected function part1(): string;
 
     abstract protected function part2(): string;

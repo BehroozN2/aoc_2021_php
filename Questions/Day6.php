@@ -18,8 +18,8 @@ class Day6 extends AbstractQuestion
     {
         $lanternFishes = array_fill(0, 9, 0);
 
-        foreach (explode(',', $this->input[0]) as $timer) {
-            $lanternFishes[(int)$timer]++;
+        foreach ($this->getSingleLineInputAsArrayOfIntegers() as $timer) {
+            $lanternFishes[$timer]++;
         }
 
         for ($day = 0; $day < $days; $day++) {
