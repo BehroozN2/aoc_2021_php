@@ -15,7 +15,11 @@ abstract class AbstractQuestion
 
     public function solve(): void
     {
-        echo $this->{'part' . $this->part}();
+        $startTime = microtime(true);
+
+        echo 'Answer : ' . $this->{'part' . $this->part}();
+
+        echo PHP_EOL . 'Runtime: ' . (microtime(true) - $startTime);
     }
 
     protected function getInputAsArrayOfIntegers(): array
