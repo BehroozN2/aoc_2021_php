@@ -29,14 +29,14 @@ class Day7 extends AbstractQuestion
 
         $bestFuelConsumption = null;
         for ($position = $minPosition; $position <= $maxPosition; $position++) {
-            $positionsFuelConsumption = 0;
+            $positionFuelConsumption = 0;
 
             foreach ($crabPositions as $crabPosition) {
-                $positionsFuelConsumption += $costs[abs($crabPosition - $position)];
+                $positionFuelConsumption += $costs[abs($crabPosition - $position)];
             }
 
-            if ($positionsFuelConsumption < $bestFuelConsumption || $bestFuelConsumption === null) {
-                $bestFuelConsumption = $positionsFuelConsumption;
+            if ($positionFuelConsumption < $bestFuelConsumption || $bestFuelConsumption === null) {
+                $bestFuelConsumption = $positionFuelConsumption;
             }
         }
 
