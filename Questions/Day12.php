@@ -7,13 +7,13 @@ class Day12 extends AbstractQuestion
     protected function part1(): string
     {
         $pathFinder = new Day12PathFinder($this->input);
-        return (string)$pathFinder->getUnvisitedPathCount();
+        return (string)$pathFinder->getOneVisitSmallNodesPathCount();
     }
 
     protected function part2(): string
     {
         $pathFinder = new Day12PathFinder($this->input);
-        return (string)$pathFinder->getCanVisitTwicePathCount();
+        return (string)$pathFinder->getTwoVisitsOnOnlyOneSmallNodePathCount();
     }
 }
 
@@ -35,12 +35,12 @@ class Day12PathFinder
         }
     }
 
-    public function getUnvisitedPathCount(): int
+    public function getOneVisitSmallNodesPathCount(): int
     {
         return count($this->getPaths('start'));
     }
 
-    public function getCanVisitTwicePathCount(): int
+    public function getTwoVisitsOnOnlyOneSmallNodePathCount(): int
     {
         $allPaths = [];
 
