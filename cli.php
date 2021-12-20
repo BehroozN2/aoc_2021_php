@@ -18,6 +18,7 @@ function getFullPath(string $relativePath): string
 }
 
 [, $day, $part] = $argv;
+$day = str_pad($day, 2, '0', STR_PAD_LEFT);
 
 $inputPath = getFullPath('Inputs/Day' . $day . '.txt');
 

@@ -2,13 +2,13 @@
 
 namespace Questions;
 
-class Day8 extends AbstractQuestion
+class Day08 extends AbstractQuestion
 {
     protected function part1(): string
     {
         return (string)array_reduce(
             $this->getDisplays(),
-            fn(int $total, Day8Display $display) => $total +
+            fn(int $total, Day08Display $display) => $total +
                 count(
                     array_filter(
                         $display->outputDigits,
@@ -23,7 +23,7 @@ class Day8 extends AbstractQuestion
     {
         return (string)array_reduce(
             $this->getDisplays(),
-            fn(int $total, Day8Display $display) => $total + $display->getOutputValue(),
+            fn(int $total, Day08Display $display) => $total + $display->getOutputValue(),
             0,
         );
     }
@@ -31,13 +31,13 @@ class Day8 extends AbstractQuestion
     protected function getDisplays(): array
     {
         return array_map(
-            fn($inputLine) => new Day8Display($inputLine),
+            fn($inputLine) => new Day08Display($inputLine),
             $this->input,
         );
     }
 }
 
-class Day8Display
+class Day08Display
 {
     public array $signalPatterns; /* Holds 10 unique signal patterns from the input */
     public array $outputDigits; /* Holds 4 output digits from the input */

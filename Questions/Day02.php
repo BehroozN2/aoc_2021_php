@@ -2,19 +2,19 @@
 
 namespace Questions;
 
-class Day2 extends AbstractQuestion
+class Day02 extends AbstractQuestion
 {
     protected function part1(): string
     {
         return (string)$this->getCommandsResult(
             [
-                'forward' => function (Day2Course $course, int $amount) {
+                'forward' => function (Day02Course $course, int $amount) {
                     $course->horizontalPosition += $amount;
                 },
-                'down' => function (Day2Course $course, int $amount) {
+                'down' => function (Day02Course $course, int $amount) {
                     $course->depth += $amount;
                 },
-                'up' => function (Day2Course $course, int $amount) {
+                'up' => function (Day02Course $course, int $amount) {
                     $course->depth -= $amount;
                 },
             ]
@@ -25,14 +25,14 @@ class Day2 extends AbstractQuestion
     {
         return (string)$this->getCommandsResult(
             [
-                'forward' => function (Day2Course $course, int $amount) {
+                'forward' => function (Day02Course $course, int $amount) {
                     $course->horizontalPosition += $amount;
                     $course->depth += $course->aim * $amount;
                 },
-                'down' => function (Day2Course $course, int $amount) {
+                'down' => function (Day02Course $course, int $amount) {
                     $course->aim += $amount;
                 },
-                'up' => function (Day2Course $course, int $amount) {
+                'up' => function (Day02Course $course, int $amount) {
                     $course->aim -= $amount;
                 },
             ]
@@ -41,7 +41,7 @@ class Day2 extends AbstractQuestion
 
     protected function getCommandsResult(array $commandFunctions): int
     {
-        $course = new Day2Course;
+        $course = new Day02Course;
 
         foreach ($this->input as $command) {
             [$action, $amount] = explode(' ', $command);
@@ -55,7 +55,7 @@ class Day2 extends AbstractQuestion
     }
 }
 
-class Day2Course
+class Day02Course
 {
     public function __construct(
         public int $horizontalPosition = 0,

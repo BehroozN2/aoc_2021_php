@@ -2,7 +2,7 @@
 
 namespace Questions;
 
-class Day7 extends AbstractQuestion
+class Day07 extends AbstractQuestion
 {
     protected function part1(): string
     {

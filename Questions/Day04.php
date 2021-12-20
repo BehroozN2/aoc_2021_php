@@ -2,7 +2,7 @@
 
 namespace Questions;
 
-class Day4 extends AbstractQuestion
+class Day04 extends AbstractQuestion
 {
     protected function part1(): string
     {
@@ -10,7 +10,7 @@ class Day4 extends AbstractQuestion
 
         foreach ($numbers as $number) {
             foreach ($boards as $board) {
-                /** @var Day4Board $board */
+                /** @var Day04Board $board */
                 $board->mark($number);
 
                 if ($board->hasWon()) {
@@ -28,7 +28,7 @@ class Day4 extends AbstractQuestion
 
         foreach ($numbers as $number) {
             foreach ($boards as &$board) {
-                /** @var Day4Board $board */
+                /** @var Day04Board $board */
                 $board->mark($number);
 
                 if ($board->hasWon()) {
@@ -58,7 +58,7 @@ class Day4 extends AbstractQuestion
         );
 
         $boards = array_map(
-            fn($board) => new Day4Board($board),
+            fn($board) => new Day04Board($board),
             array_chunk(
                 array_map(
                     fn($row) => array_map(
@@ -75,7 +75,7 @@ class Day4 extends AbstractQuestion
     }
 }
 
-class Day4Board
+class Day04Board
 {
     protected array $marked;
     protected int $rowsCount;

@@ -2,22 +2,22 @@
 
 namespace Questions;
 
-class Day9 extends AbstractQuestion
+class Day09 extends AbstractQuestion
 {
     protected function part1(): string
     {
-        $heightMap = new Day9HeightMap($this->input);
+        $heightMap = new Day09HeightMap($this->input);
         return (string)$heightMap->getLowPointRiskLevels();
     }
 
     protected function part2(): string
     {
-        $heightMap = new Day9HeightMap($this->input);
+        $heightMap = new Day09HeightMap($this->input);
         return (string)$heightMap->getThreeLargestBasinsMultipliedSize();
     }
 }
 
-class Day9HeightMap
+class Day09HeightMap
 {
     public array $map;
 
@@ -25,7 +25,7 @@ class Day9HeightMap
     {
         $this->map = array_map(
             fn(string $row) => array_map(
-                fn(string $height) => new Day9Point((int)$height),
+                fn(string $height) => new Day09Point((int)$height),
                 str_split($row),
             ),
             $input,
@@ -47,7 +47,7 @@ class Day9HeightMap
             $this->map,
             fn(int $totalRisk, array $row) => array_reduce(
                 $row,
-                fn(int $rowRisk, Day9Point $point) => $rowRisk + $point->getLowPointRiskLevel(),
+                fn(int $rowRisk, Day09Point $point) => $rowRisk + $point->getLowPointRiskLevel(),
                 $totalRisk,
             ),
             0,
@@ -72,7 +72,7 @@ class Day9HeightMap
         return $basinSizes[0] * $basinSizes[1] * $basinSizes[2];
     }
 
-    protected function getBasinSize(array &$checkedPoints, ?Day9Point $point): int
+    protected function getBasinSize(array &$checkedPoints, ?Day09Point $point): int
     {
         if (
             $point === null ||
@@ -92,14 +92,14 @@ class Day9HeightMap
     }
 }
 
-class Day9Point
+class Day09Point
 {
     public int $id;
 
-    public ?Day9Point $left;
-    public ?Day9Point $right;
-    public ?Day9Point $top;
-    public ?Day9Point $bottom;
+    public ?Day09Point $left;
+    public ?Day09Point $right;
+    public ?Day09Point $top;
+    public ?Day09Point $bottom;
 
     protected static int $lastId = 0;
 

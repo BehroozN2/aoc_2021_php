@@ -2,7 +2,7 @@
 
 namespace Questions;
 
-class Day5 extends AbstractQuestion
+class Day05 extends AbstractQuestion
 {
     protected function part1(): string
     {
@@ -19,7 +19,7 @@ class Day5 extends AbstractQuestion
         $points = [];
 
         foreach ($this->getCoordinatePairs() as $coordinatePair) {
-            /** @var Day5CoordinatePair $coordinatePair */
+            /** @var Day05CoordinatePair $coordinatePair */
             $isHorizontalOrVertical = $coordinatePair->isHorizontalOrVertical();
 
             if (!$isHorizontalOrVertical && $onlyHorizontalOrVertical) {
@@ -51,13 +51,13 @@ class Day5 extends AbstractQuestion
     protected function getCoordinatePairs(): array
     {
         return array_map(
-            fn(string $line) => new Day5CoordinatePair($line),
+            fn(string $line) => new Day05CoordinatePair($line),
             $this->input,
         );
     }
 }
 
-class Day5CoordinatePair
+class Day05CoordinatePair
 {
     public int $x1;
     public int $y1;
